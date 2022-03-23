@@ -31,14 +31,12 @@ def get_wombats(db):
 
     data = [wombat.to_dict() for wombat in wombats]
 
-    print({"wombats": data})
     response.content_type = 'application/json'
     return json.dumps({"wombats": data})
 
 
 @app.route('/wombats', method=['POST'])
 def post_wombats(db):
-    print(request)
     data = request.forms
 
     if 'name' not in data:
