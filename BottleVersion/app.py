@@ -26,7 +26,6 @@ def index():
 
 @app.route('/wombats', method=['GET'])
 def get_wombats(db):
-
     wombats = session.query(Wombat).all()
 
     data = [wombat.to_dict() for wombat in wombats]
